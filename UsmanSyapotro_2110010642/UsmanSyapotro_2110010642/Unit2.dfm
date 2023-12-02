@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = 179
-  Top = 131
-  Width = 316
-  Height = 290
-  Caption = 'Form1'
+object Form2: TForm2
+  Left = 502
+  Top = 201
+  Width = 315
+  Height = 334
+  Caption = 'Form2'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,11 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 112
-    Top = 32
-    Width = 64
+    Left = 104
+    Top = 16
+    Width = 99
     Height = 23
-    Caption = 'LOGIN'
+    Caption = 'REGISTER'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -28,7 +28,20 @@ object Form1: TForm1
   end
   object Label2: TLabel
     Left = 24
-    Top = 80
+    Top = 64
+    Width = 17
+    Height = 19
+    Caption = 'ID'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 112
     Width = 71
     Height = 19
     Caption = 'Username'
@@ -39,9 +52,9 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
-  object Label3: TLabel
+  object Label4: TLabel
     Left = 24
-    Top = 128
+    Top = 160
     Width = 67
     Height = 19
     Caption = 'Password'
@@ -52,41 +65,46 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
+  object Label5: TLabel
+    Left = 24
+    Top = 208
+    Width = 36
+    Height = 19
+    Caption = 'Level'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object Edit1: TEdit
     Left = 120
-    Top = 80
+    Top = 64
     Width = 161
     Height = 21
     TabOrder = 0
   end
   object Edit2: TEdit
     Left = 120
-    Top = 128
+    Top = 112
     Width = 161
     Height = 21
     TabOrder = 1
   end
-  object Button1: TButton
-    Left = 56
-    Top = 184
-    Width = 75
-    Height = 25
-    Caption = 'LOGIN'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
+  object Edit3: TEdit
+    Left = 120
+    Top = 160
+    Width = 161
+    Height = 21
     TabOrder = 2
-    OnClick = Button1Click
   end
-  object Button2: TButton
-    Left = 160
-    Top = 184
+  object Button1: TButton
+    Left = 64
+    Top = 256
     Width = 75
     Height = 25
-    Caption = 'REGISTER'
+    Caption = 'SIMPAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -94,6 +112,30 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 168
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'BATAL'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
     OnClick = Button2Click
+  end
+  object Edit4: TEdit
+    Left = 120
+    Top = 208
+    Width = 161
+    Height = 21
+    Enabled = False
+    TabOrder = 5
+    Text = 'user'
   end
 end

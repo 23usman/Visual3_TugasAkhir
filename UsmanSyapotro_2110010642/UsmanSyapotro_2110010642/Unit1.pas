@@ -16,6 +16,7 @@ type
     Button1: TButton;
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +30,9 @@ var
   level:string;
 
 implementation
+
+uses
+  Unit2;
 
 {$R *.dfm}
 
@@ -65,6 +69,11 @@ begin
     zqry.Free;
   end;
 end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Form2.Show;
 end;
 
 end.
