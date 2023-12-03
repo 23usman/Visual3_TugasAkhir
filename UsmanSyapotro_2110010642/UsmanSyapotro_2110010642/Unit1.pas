@@ -32,7 +32,7 @@ var
 implementation
 
 uses
-  Unit2;
+  Unit2, Unit3;
 
 {$R *.dfm}
 
@@ -73,7 +73,7 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-Form2.Show;
+Form3.Show;
 end;
 
 end.

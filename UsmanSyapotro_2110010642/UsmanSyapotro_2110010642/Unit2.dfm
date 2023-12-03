@@ -136,6 +136,6 @@ object Form2: TForm2
     Height = 21
     Enabled = False
     TabOrder = 5
-    Text = 'user'
+    Text = 'admin'
   end
 end
