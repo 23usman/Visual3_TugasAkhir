@@ -4,23 +4,23 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
+  ZAbstractConnection, ZConnection;
 
 type
   TForm2 = class(TForm)
-    Label1: TLabel;
-    Label2: TLabel;
-    Edit1: TEdit;
-    Label3: TLabel;
-    Edit2: TEdit;
-    Label4: TLabel;
-    Edit3: TEdit;
-    Button1: TButton;
-    Button2: TButton;
-    Label5: TLabel;
-    Edit4: TEdit;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    lbl1: TLabel;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    e_1: TEdit;
+    e_2: TEdit;
+    e_3: TEdit;
+    btn1: TButton;
+    btn2: TButton;
+    con1: TZConnection;
+    zqry1: TZQuery;
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +29,6 @@ type
 
 var
   Form2: TForm2;
-  id:string;
 
 implementation
 
@@ -38,44 +37,34 @@ uses
 
 {$R *.dfm}
 
-procedure TForm2.Button1Click(Sender: TObject);
+
+procedure TForm2.btn1Click(Sender: TObject);
 begin
- if Edit1.Text='' then
+if e_1.Text='' then
   begin
-    ShowMessage('ID BELUM DIISI');
+    ShowMessage('USERNAME BELUM DIISI DENGAN BENAR');
     end else
-    if Edit2.Text=''then
+    if e_2.Text=''then
     begin
-     ShowMessage('USERNAME BELUM DIISI');
+     ShowMessage('PASSWORD BELUM DIISI DENGAN BENAR');
     end else
-    if Edit3.text=''then
-    begin
-     ShowMessage('PASSWORD BELUM DIISI');
-    end else
-    if Edit4.text=''then
-    begin
-    ShowMessage('Level Belum DIISI');
-    end else
-  if Form2.zqry1.Locate('id',Edit1.Text,[]) then
-  begin
-   ShowMessage('DATA SUDAH ADA DALAM SISTEM');
-  end else
   begin
 
  zqry1.SQL.Clear;
-zqry1.SQL.Add('insert into user values("'+Edit1.Text+'","'+Edit2.Text+'","'+Edit3.Text+'","'+Edit4.Text+'")');
+zqry1.SQL.Add('insert into user values(null,"'+e_1.Text+'","'+e_2.Text+'","'+e_3.Text+'")');
  zqry1.ExecSQL ;
 
  zqry1.SQL.Clear;
  zqry1.SQL.Add('select * from user');
  zqry1.Open;
-ShowMessage('DATA BERHASIL DISIMPAN!');
-end;
+ShowMessage('DATA BARHASIL DISIMPAN!');
 end;
 
-procedure TForm2.Button2Click(Sender: TObject);
+end;
+
+procedure TForm2.btn2Click(Sender: TObject);
 begin
-Form1.Show;
+Form1.show;
 end;
 
 end.

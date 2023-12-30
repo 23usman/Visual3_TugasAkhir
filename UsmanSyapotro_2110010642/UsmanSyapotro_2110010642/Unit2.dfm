@@ -1,10 +1,10 @@
 object Form2: TForm2
-  Left = 502
-  Top = 201
-  Width = 315
+  Left = 632
+  Top = 243
+  Width = 359
   Height = 334
-  Caption = 'Form2'
-  Color = clBtnFace
+  Caption = 'FORM REGISTER'
+  Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -13,129 +13,120 @@ object Form2: TForm2
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 104
-    Top = 16
-    Width = 99
-    Height = 23
-    Caption = 'REGISTER'
+  object lbl1: TLabel
+    Left = 48
+    Top = 48
+    Width = 75
+    Height = 18
+    Caption = 'Username'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 24
-    Top = 64
-    Width = 17
-    Height = 19
-    Caption = 'ID'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label3: TLabel
-    Left = 24
-    Top = 112
-    Width = 71
-    Height = 19
-    Caption = 'Username'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 24
-    Top = 160
-    Width = 67
-    Height = 19
+  object lbl2: TLabel
+    Left = 48
+    Top = 80
+    Width = 73
+    Height = 18
     Caption = 'Password'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -15
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
-    Left = 24
-    Top = 208
-    Width = 36
-    Height = 19
+  object lbl3: TLabel
+    Left = 48
+    Top = 112
+    Width = 41
+    Height = 18
     Caption = 'Level'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -15
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
-    Left = 120
-    Top = 64
-    Width = 161
+  object e_1: TEdit
+    Left = 176
+    Top = 48
+    Width = 121
     Height = 21
     TabOrder = 0
   end
-  object Edit2: TEdit
-    Left = 120
-    Top = 112
-    Width = 161
+  object e_2: TEdit
+    Left = 176
+    Top = 80
+    Width = 121
     Height = 21
     TabOrder = 1
   end
-  object Edit3: TEdit
-    Left = 120
-    Top = 160
-    Width = 161
+  object e_3: TEdit
+    Left = 176
+    Top = 112
+    Width = 121
     Height = 21
+    Enabled = False
     TabOrder = 2
+    Text = 'user'
   end
-  object Button1: TButton
-    Left = 64
-    Top = 256
+  object btn1: TButton
+    Left = 80
+    Top = 168
     Width = 75
     Height = 25
     Caption = 'SIMPAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    OnClick = Button1Click
+    OnClick = btn1Click
   end
-  object Button2: TButton
-    Left = 168
-    Top = 256
+  object btn2: TButton
+    Left = 192
+    Top = 168
     Width = 75
     Height = 25
     Caption = 'BATAL'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Button2Click
+    OnClick = btn2Click
   end
-  object Edit4: TEdit
-    Left = 120
-    Top = 208
-    Width = 161
-    Height = 21
-    Enabled = False
-    TabOrder = 5
-    Text = 'admin'
+  object con1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'Localhost'
+    Port = 3306
+    Database = 'db_perumahan'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\Users\ASD\Downloads\UsmanSyapotro_2110010642\libmysql.dll'
+    Left = 16
+    Top = 220
+  end
+  object zqry1: TZQuery
+    Connection = con1
+    Filter = 'Form8'
+    Active = True
+    SQL.Strings = (
+      'select * from user')
+    Params = <>
+    Left = 68
+    Top = 216
   end
 end
